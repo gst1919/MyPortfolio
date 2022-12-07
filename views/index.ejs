@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>saiteja</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio webpage of Vinay Somawat" />
+  <meta name="description" content="Portfolio webpage of saiteja" />
   <meta name="keywords" content="portfolio,website,personal website,github,projects,computer science and engineering" />
-  <meta name="author" content="Vinay Somawat" />
+  <meta name="author" content="saiteja" />
   <!--------------------Social Media icons------------------------>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -50,8 +50,7 @@
           <div class="author-img">
             <img src="images/logo.png">
           </div>
-          <h1 id="colorlib-logo"><a href="./index.ejs"><%-setname%></a>
-          </h1>
+          <h1 id="colorlib-logo"><%-setname%></h1>
         </div>
         <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
           <div id="navbar" class="collapse">
@@ -355,7 +354,11 @@
       divTimelineEntryInner.append(divTimelineIcon);
       divTimelineEntryInner.append(divTimelineLabel);
 
-     
+      let article = document.createElement("article");
+      article.className = "timeline-entry animate-box";
+      article.append(divTimelineEntryInner);
+
+      mainContainer.append(article);
     }
 
     let divTimelineIcon = document.createElement("div");
@@ -365,7 +368,11 @@
     divTimelineEntryInner.className = "timeline-entry-inner";
     divTimelineEntryInner.append(divTimelineIcon);
 
-   
+    let article = document.createElement("article");
+    article.className = "timeline-entry begin animate-box";
+    article.append(divTimelineEntryInner);
+
+    mainContainer.append(article);
   }
 
   function populateLinks(items, id) {
