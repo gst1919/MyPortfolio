@@ -52,7 +52,7 @@
           <div class="author-img">
             <img src="images/logo.png">
           </div>
-          <h1 id="colorlib-logo"><%-setname%></h1>
+          <h1 class="share-button" id="colorlib-logo"><%-setname%></h1>
         </div>
         <nav id="colorlib-main-menu" role="navigation" class="navbar" style="padding-top: 2em">
           <div id="navbar" class="collapse">
@@ -226,6 +226,20 @@
 
 </body>
 <script type="text/javascript">
+  const shareButton = document.querySelector('.share-button');
+shareButton.addEventListener('click', event => {
+  if (navigator.share) {
+    navigator.share({
+      title: 'WebShare API Demo',
+      url: 'https://codepen.io/ayoisaiah/pen/YbNazJ'
+    }).then(() => {
+      console.log('Thanks for sharing!');
+    })
+    .catch(console.error);
+  } else {
+    // fallback
+  }
+});
   var pr0 = '<%-prj0%>'
 
   var pr1 = '<%-prj1%>'
